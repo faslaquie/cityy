@@ -1,0 +1,56 @@
+unit Unit9;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm9 = class(TForm)
+    Button1: TButton;
+    Memo1: TMemo;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form9: TForm9;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm9.Button1Click(Sender: TObject);
+var
+TAMSAYI: Integer;
+ONDALIK_SAYI : Double;
+METIN : String;
+begin
+Memo1.Lines.Clear;
+TAMSAYI := 123;
+ONDALIK_SAYI := 987.654;
+Str (TAMSAYI, METIN);
+Memo1.Lines.Add('TAMSAYI --> ' + METIN);
+Str(TAMSAYI:10, METIN);
+Memo1.Lines.Add('TAMSAYI(10 karakter) --> '+METIN);
+Memo1.Lines.Add('------');
+Str (ONDALIK_SAYI, METIN);
+Memo1.Lines.Add('ONDALIK SAYI --> '+ METIN);
+Str (ONDALIK_SAYI:1, METIN);
+Memo1.Lines.Add('ONDALIK_SAYI --> '+ METIN);
+Str (ONDALIK_SAYI:1:1, METIN);
+Memo1.Lines.Add('ONDALIK_SAYI (5 karakter) -->' + METIN);
+Str (ONDALIK_SAYI:2:6, METIN);
+Memo1.Lines.Add('ONDALIK_SAYI (9 karakter) -->' + METIN);
+Str (ONDALIK_SAYI:15:5, METIN);
+Memo1.Lines.Add('ONDALIK_SAYI (15 karakter) -->' + METIN);
+Str (ONDALIK_SAYI:20:5, METIN);
+Memo1.Lines.Add('ONDALIK_SAYI (20 karakter) --> ' + METIN);
+
+end;
+
+end.
